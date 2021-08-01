@@ -5,6 +5,7 @@ import { noAssigned } from '../internal-constants';
 @Component({
   selector: 'lib-ng-context-provider',
   templateUrl: './ng-context-provider.component.html',
+  providers:[ContextConsumerService]
 })
 export class NgContextProviderComponent implements OnInit {
   
