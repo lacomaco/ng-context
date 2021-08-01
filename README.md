@@ -1,27 +1,47 @@
 # NgContext
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
+Angular Context API Module Inspired By React Context API
 
-## Development server
+## 사용법
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Provider 사용예
 
-## Code scaffolding
+```html
+<ng-context.provider name="colorProvider" value="red">
+    <app-consumer></app-consumer>
+</ng-context.provider>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<ng-context.provider name="colorProvider" value="blue">
+    <app-consumer></app-consumer>
+</ng-context.provider>
+```
 
-## Build
+Consumer 사용예
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```ts
+@Component({
+    selector:'app-consumer',
+    ...
+})
+export class Consumer implements OnInit{
+    selectContext$;
+    constructor(private context: ContextConsumerService){}
 
-## Running unit tests
+    ngOnInit(): void{
+        this.selectContext$ = this.context.select<string>('colorProvider');
+    }
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<ng-container *ngIf="selectContext$ | async as context">
+    {{context}}
+</ng-container>
+```
 
-## Running end-to-end tests
+### How It Works?
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ng-context.provider 컴포넌트가 생성되면 Element Injector Tree에 Context를 저장하고 접근을 도와주는 ContextConsumerService 객체를 생성합니다.
 
-## Further help
+ng-context.provider 아래에 생성된 컴포넌트는 이 ContextConsumerService를 DI받아 데이터에 접근하는게 가능합니다
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
