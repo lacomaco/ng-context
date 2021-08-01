@@ -1,4 +1,4 @@
-# NgContextExample
+# NgContext
 
 Angular Context API Module Inspired By React Context API
 
