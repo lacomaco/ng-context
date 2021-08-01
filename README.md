@@ -38,3 +38,10 @@ export class Consumer implements OnInit{
     {{context}}
 </ng-container>
 ```
+
+### How It Works?
+
+ng-context.provider 컴포넌트가 생성되면 Element Injector Tree에 Context를 저장하고 접근을 도와주는 ContextConsumerService 객체를 생성합니다.
+
+ng-context.provider 아래에 생성된 컴포넌트는 이 ContextConsumerService를 DI받아 데이터에 접근하는게 가능합니다
+
