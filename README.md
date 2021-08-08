@@ -4,7 +4,7 @@ Angular Context API Module Inspired By React Context API
 
 ## 사용법
 
-Provider 사용예
+Provider
 
 ```html
 <ng-context-provider name="colorProvider" value="red">
@@ -16,7 +16,7 @@ Provider 사용예
 </ng-context-provider>
 ```
 
-Consumer 사용예
+Consumer
 
 ```ts
 @Component({
@@ -31,12 +31,6 @@ export class Consumer implements OnInit{
         this.selectContext$ = this.context.select<string>('colorProvider');
     }
 }
-```
-
-```html
-<ng-container *ngIf="selectContext$ | async as context">
-    {{context}}
-</ng-container>
 ```
 
 ### How It Works?
