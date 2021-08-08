@@ -6,6 +6,8 @@ Angular Context API Module Inspired By React Context API
 npm i ng-context-api
 ```
 
+npm : https://www.npmjs.com/package/ng-context-api
+
 # Usage
 
 ### Provider
