@@ -3,7 +3,7 @@ import { ContextConsumerService } from '../context-consumer.service';
 import { noAssigned } from '../internal-constants';
 
 @Component({
-  selector: 'lib-ng-context-provider',
+  selector: 'ng-context-provider',
   templateUrl: './ng-context-provider.component.html',
   providers:[ContextConsumerService]
 })
