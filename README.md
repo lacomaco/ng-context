@@ -7,13 +7,13 @@ Angular Context API Module Inspired By React Context API
 Provider 사용예
 
 ```html
-<ng-context.provider name="colorProvider" value="red">
+<ng-context-provider name="colorProvider" value="red">
     <app-consumer></app-consumer>
-</ng-context.provider>
+</ng-context-provider>
 
-<ng-context.provider name="colorProvider" value="blue">
+<ng-context-provider name="colorProvider" value="blue">
     <app-consumer></app-consumer>
-</ng-context.provider>
+</ng-context-provider>
 ```
 
 Consumer 사용예
