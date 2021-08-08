@@ -70,7 +70,6 @@ class ChildComponent {
   constructor(public contextConsumer: ContextConsumerService){}
 
   changeParentValue(){
-    console.log('run');
     this.contextConsumer.patch<{shareValue:string}>({
       shareValue: 'changed',
     });
@@ -146,7 +145,6 @@ describe('NgContextProviderComponent', () => {
       try{
         const instance = parent.componentInstance;
         instance.providerName = 'make error';
-        //hostFixture.detectChanges();
       }catch(e){
         expect(true).toBe(true);
       }
