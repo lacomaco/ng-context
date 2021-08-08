@@ -10,18 +10,6 @@ npm : https://www.npmjs.com/package/ng-context-api
 
 # Usage
 
-# NgContext
-
-Angular Context API Module Inspired By React Context API
-
-```shell
-npm i ng-context-api
-```
-
-npm : https://www.npmjs.com/package/ng-context-api
-
-# Usage
-
 ### Setting
 
 ```ts
